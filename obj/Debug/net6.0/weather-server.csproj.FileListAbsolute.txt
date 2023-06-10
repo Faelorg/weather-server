@@ -31,3 +31,5 @@ C:\Users\efrem\OneDrive\Рабочий стол\weather-server\obj\Debug\net6.0\
 C:\Users\efrem\OneDrive\Рабочий стол\weather-server\obj\Debug\net6.0\weather-server.genruntimeconfig.cache
 C:\Users\efrem\OneDrive\Рабочий стол\weather-server\obj\Debug\net6.0\ref\weather-server.dll
 C:\Users\efrem\OneDrive\Рабочий стол\weather-server\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\efrem\OneDrive\Рабочий стол\weather-server\bin\Debug\net6.0\DotNetEnv.dll
+C:\Users\efrem\OneDrive\Рабочий стол\weather-server\bin\Debug\net6.0\Sprache.dll

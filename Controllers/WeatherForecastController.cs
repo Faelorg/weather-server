@@ -6,19 +6,25 @@ using Newtonsoft.Json.Linq;
 namespace weather_server.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("/")]
 public class WeatherForecastController : ControllerBase
 {
+    private readonly IConfiguration _configuration;
+
+    public WeatherForecastController(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
     private Data data = new Data();
 
-    [HttpGet("Test")]
-    public async Task<ActionResult> test(string city)
+    [HttpGet("get")]
+    public async Task<ActionResult> GetWeather(string city)
     {
         var res = await new HttpClient().GetAsync("https://api.openweathermap.org/data/2.5/weather?q=" + Capitalize(
-        city) + "&appid=11b33cd5e7c69c776ca7b12cde660a1f&units=metric");
+        city) + "&appid=" + Environment.GetEnvironmentVariable("API_KEY") + "&units=metric");
 
         var rs = await res.Content.ReadAsStringAsync();
-
+        System.Console.WriteLine(Environment.GetEnvironmentVariable("API_KEY"));
         return Ok(Prettify(rs));
     }
 
