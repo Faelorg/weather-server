@@ -48,8 +48,6 @@ public class WeatherForecastController : ControllerBase
 
         var sunset = double.Parse(parsedData.SelectToken("sys.sunset")!.ToString());
 
-        System.Console.WriteLine(sunrise);
-
         data.sunriseGMT = new DateTime().AddSeconds(sunrise).ToLocalTime();
 
         data.sunsetGMT = new DateTime().AddSeconds(sunset).ToLocalTime();
