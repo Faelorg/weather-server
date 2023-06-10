@@ -22,9 +22,7 @@ public class WeatherForecastController : ControllerBase
     {
         var res = await new HttpClient().GetAsync("https://api.openweathermap.org/data/2.5/weather?q=" + Capitalize(
         city) + "&appid=" + Environment.GetEnvironmentVariable("API_KEY") + "&units=metric");
-
         var rs = await res.Content.ReadAsStringAsync();
-        System.Console.WriteLine(Environment.GetEnvironmentVariable("API_KEY"));
         return Ok(Prettify(rs));
     }
 
